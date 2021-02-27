@@ -102,3 +102,19 @@ dist
 
 # TernJS port file
 .tern-port
+02-Homework/html_gen/index.html
+02-Homework/html_gen/index.js
+02-Homework/html_gen/package.json
+02-Homework/html_gen/starter.js
+02-Homework/html_gen/zindex.js
+02-Homework/pdf_gen_12_20/api copy.js
+02-Homework/pdf_gen_12_20/api.js
+02-Homework/pdf_gen_12_20/generateHTML.js
+02-Homework/pdf_gen_12_20/ind3x.js
+02-Homework/pdf_gen_12_20/index.html
+02-Homework/pdf_gen_12_20/index.js
+02-Homework/pdf_gen_12_20/indx.js
+02-Homework/pdf_gen_12_20/package-lock.json
+02-Homework/pdf_gen_12_20/package.json
+02-Homework/pdf_gen_12_20/prompt_user.js
+02-Homework/pdf_gen_12_20/run-live-server.sh
