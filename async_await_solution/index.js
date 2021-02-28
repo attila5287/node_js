@@ -37,7 +37,9 @@ async function init() {
 
   function prep_data ( ans, res ) {
     
-      console.log( "res.data :>> ", res.data );
+      console.log(  );
+      console.log( res.data );
+      console.log(  );
 		let d = {
 			name: "",
 			color: "",
