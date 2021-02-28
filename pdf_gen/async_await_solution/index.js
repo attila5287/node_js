@@ -2,7 +2,7 @@ const axios = require( 'axios' );
 const generateHTML = require( './generateHTML' );
 const inquirer = require("inquirer");
 
-
+// input, number, confirm, list, rawlist, expand, checkbox, password, editor
 async function init() {
   const questions = [
     {
@@ -14,7 +14,7 @@ async function init() {
       type: "list",
       name: "color",
       message: "choose a color to style pdf...",
-      choices: ["green", "blue", "pink", "red", ]
+      choices: ["green", "blue", "pink", "red" ]
     }
   ];
   const answers = await inquirer.prompt( questions );
