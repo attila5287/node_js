@@ -6,18 +6,18 @@ const inquirer = require("inquirer");
 // input, number, confirm, list, rawlist, expand, checkbox, password, editor
 async function init() {
   const questions = [
-		{
-			type: "input",
-			name: "username",
-			message: "type github username..."
-		},
-		{
-			type: "list",
-			name: "color",
-			message: "choose a color to style pdf...",
-			choices: ["green", "blue", "pink", "red"]
-		}
-	];
+    {
+      type: "input",
+      name: "username",
+      message: "type github username..."
+    },
+    {
+      type: "list",
+      name: "color",
+      message: "choose a color to style pdf...",
+      choices: ["green", "blue", "pink", "red" ]
+    }
+  ];
   const answers = await inquirer.prompt( questions );
   // console.log( 'answers :>> ', answers );
   
@@ -47,7 +47,7 @@ async function init() {
     }, 0 )
   }
 
-  console.log( 'github response :>> ', response.data );
+  // console.log( 'github response :>> ', response );
   // console.log("TOO LONG!response_stars :>> ", response_stars);
   
   let d = {
@@ -55,15 +55,13 @@ async function init() {
 		stars: star_finder(response_stars),
 		color: final_answers.color,
 		...response.data
-  };
-
-  console.log('d :>> ', d);
+	};
+  console.log("f :>> ", final_answers.username);
   function log_success ( op ) {
     console.log(`${op}} successful!`);
   }
-  
-  const html = generateHTML( d );
-  
+  const html = generateHTML(d);
+ 
   fs.writeFile( "github.html", html, () => log_success( 'html file create' ) );
 
 
