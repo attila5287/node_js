@@ -1,4 +1,7 @@
-const fs = require('fs');
+const path = require("path");
+const open = require("open");
+const convertFactory = require( "electron-html-to" );
+const fs = require( 'fs' );
 const axios = require( 'axios' );
 const generateHTML = require( './generateHTML' );
 const inquirer = require("inquirer");
@@ -37,8 +40,10 @@ async function init() {
   
   const response = await axios.get( url );
   const response_stars = await axios.get( url_stars );
-  // per page needs to be appended
+  // console.log( 'github response :>> ', response );
+  // console.log("TOO LONG!response_stars :>> ", response_stars);
   
+  // per page needs to be appended
   function star_finder ( res ) {
     // After getting user, count all their repository stars
     return res.data.reduce( ( acc, curr ) => {
@@ -47,23 +52,35 @@ async function init() {
     }, 0 )
   }
 
-  // console.log( 'github response :>> ', response );
-  // console.log("TOO LONG!response_stars :>> ", response_stars);
-  
   let d = {
 		username: final_answers.username,
 		stars: star_finder(response_stars),
 		color: final_answers.color,
 		...response.data
 	};
-  console.log("f :>> ", final_answers.username);
+  
   function log_success ( op ) {
     console.log(`${op}} successful!`);
   }
+
   const html = generateHTML(d);
  
   fs.writeFile( "github.html", html, () => log_success( 'html file create' ) );
+  
+  const conversion = convertFactory( {
+    converterPath: convertFactory.converters.PDF
+    });
 
+   conversion({ html }, function (err, result) {
+      if (err) {
+        return console.error(err);
+      }
+    
+      result.stream.pipe(fs.createWriteStream(path.join(__dirname, "resume.pdf")));
+      conversion.kill();
+    });
+    
+open(path.join(process.cwd(), "resume.pdf"));
 
 
 }
