@@ -17,7 +17,7 @@ const init = async () => {
 		// API GOES HERE pull github stars by username>>
 		const response = await api.pull_response_data("attila5287");
 		const response_data = response.data;
-		// console.log('response.data.owner.avatar_url :>> ', response.data.owner.avatar_url);
+		console.log('response.data.owner.avatar_url :>> ', response.data.owner.avatar_url);
 		const stars_count = await api.sum_user_stars("attila5287");
 		const data_for_html = {
 			name: "attila5287",

@@ -27,14 +27,18 @@ async function init() {
 		}
     return ans;
   }
-  const final_answers = prep_answers(answers);
+  const final_answers = prep_answers( answers );
+  
   
   // github API
   const url = `https://api.github.com/users/${final_answers.name}?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}`;
-
+  const url_stars = `https://api.github.com/users/${final_answers.name}/repos?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&per_page=100`;
+  
   const response = await axios.get( url );
+  // per page needs to be appended
+  const response_stars = await axios.get( url_stars );
   // console.log( 'github response :>> ', response );
-
+  console.log("github response_stars :>> ", response_stars);
   function prep_data ( ans, res ) {
     
       console.log(  );

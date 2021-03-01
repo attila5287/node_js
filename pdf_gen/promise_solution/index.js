@@ -16,7 +16,7 @@ function init() {
 		api                                          
 			.pull_response_data( name )
 			.then( ( response ) => {
-
+console.log('response.data :>> ', response.data);
 			api
 				.sum_user_stars( name )
 				.then( ( stars ) => {

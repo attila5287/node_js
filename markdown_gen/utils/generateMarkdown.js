@@ -11,9 +11,18 @@ function renderLicenseLink(license) {}
 function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
+const data_object_example = {
+	title: "node_js_terminal",
+	github_username: "attila5287",
+	github_io : "attila5287.github.io/",
+	profile_url: "https://github.com/attila5287/",
+};
+
 function generateMarkdown(data) {
   return `# ${data.title}
-
+  ### developed by  ${data.github_username}
+  ### visit my github portfolio : ${data.github_io}
+  ### check my github codes: ${data.profile_url}
 `;
 }
 

@@ -14,14 +14,16 @@ api = {// fetch user related data from GitHub via public api
 			} )
 		
 	},
-	sum_user_stars(name="attila5287") {
+	sum_user_stars ( name = "attila5287" ) {
+		
 		return axios
       .get(
         `https://api.github.com/users/${name}/repos?client_id=${
           process.env.CLIENT_ID
         }&client_secret=${process.env.CLIENT_SECRET}&per_page=100`
       )
-      .then(response => {
+			.then( response => {
+				// console.log('TOO LONG TO WAIT response.data :>> ', response.data);
         // After getting user, count all their repository stars
         return response.data.reduce((acc, curr) => {
           acc += curr.stargazers_count;
