@@ -1,15 +1,14 @@
-const path = require("path");
-const open = require("open");
+const path = require( "path" );
+const open = require( "open" );
 const convertFactory = require( "electron-html-to" );
 const fs = require( 'fs' );
 const axios = require( 'axios' );
 const generateHTML = require( './generateHTML' );
-const inquirer = require("inquirer");
+const inquirer = require( "inquirer" );
 
 // input, number, confirm, list, rawlist, expand, checkbox, password, editor
 async function init() {
-  const questions = [
-    {
+  const questions = [ {
       type: "input",
       name: "username",
       message: "type github username..."
@@ -18,33 +17,33 @@ async function init() {
       type: "list",
       name: "color",
       message: "choose a color to style pdf...",
-      choices: ["green", "blue", "pink", "red" ]
+      choices: [ "green", "blue", "pink", "red" ]
     }
   ];
   const answers = await inquirer.prompt( questions );
   // console.log( 'answers :>> ', answers );
-  
-  function prep_answers (ans) {
-    if (ans.username == "") {
-			ans.username = "attila5287";
-			console.log("name default :>> ", ans);
-		}
+
+  function prep_answers( ans ) {
+    if ( ans.username == "" ) {
+      ans.username = "attila5287";
+      console.log( "name default :>> ", ans );
+    }
     return ans;
   }
   const final_answers = prep_answers( answers );
-  
-  
+
+
   // github API
   const url = `https://api.github.com/users/${final_answers.username}?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}`;
   const url_stars = `https://api.github.com/users/${final_answers.username}/repos?client_id=${process.env.CLIENT_ID}&client_secret=${process.env.CLIENT_SECRET}&per_page=100`;
-  
+
   const response = await axios.get( url );
   const response_stars = await axios.get( url_stars );
   // console.log( 'github response :>> ', response );
   // console.log("TOO LONG!response_stars :>> ", response_stars);
-  
+
   // per page needs to be appended
-  function star_finder ( res ) {
+  function star_finder( res ) {
     // After getting user, count all their repository stars
     return res.data.reduce( ( acc, curr ) => {
       acc += curr.stargazers_count;
@@ -53,38 +52,39 @@ async function init() {
   }
 
   let d = {
-		username: final_answers.username,
-		stars: star_finder(response_stars),
-		color: final_answers.color,
-		...response.data
-	};
-  
-  function log_success ( op ) {
-    console.log(`${op}} successful!`);
+    username: final_answers.username,
+    stars: star_finder( response_stars ),
+    color: final_answers.color,
+    ...response.data
+  };
+
+  function log_success( op ) {
+    console.log( `${op}} successful!` );
   }
 
-  const html = generateHTML(d);
- 
+  const html = generateHTML( d );
+
   fs.writeFile( "github.html", html, () => log_success( 'html file create' ) );
-  
+
   const conversion = convertFactory( {
     converterPath: convertFactory.converters.PDF
-    });
+  } );
 
-   conversion({ html }, function (err, result) {
-      if (err) {
-        return console.error(err);
-      }
-    
-      result.stream.pipe(fs.createWriteStream(path.join(__dirname, "resume.pdf")));
-      conversion.kill();
-    });
-    
-open(path.join(process.cwd(), "resume.pdf"));
+  conversion( {
+    html
+  }, function ( err, result ) {
+    if ( err ) {
+      return console.error( err );
+    }
+    result.stream.pipe( fs.createWriteStream( path.join( __dirname, "resume.pdf" ) ) );
+    conversion.kill();
+  } );
+
+  open( path.join( process.cwd(), "resume.pdf" ) );
 
 
 }
-  
-    
-      
+
+
+
 init();
