@@ -36,7 +36,7 @@ const gen_markdown = ( d ) => {
 | ![alt text]( https://icons.iconarchive.com/icons/social-media-icons/social-buntings/48/Aim-icon.png "dev-icon") | About Developer | 
 | -------------   | ------------- |
 | Email    |  ${d.email} | 
-| Repos | [github.com/${d.username}/${d.username} ](https://github.com/${
+| Repos | [github.com/${d.username} ](https://github.com/${
 		d.username
 	}/) |
 | Profile | [ ${d.username}.github.io ](https:///${d.username}.github.io/) |
