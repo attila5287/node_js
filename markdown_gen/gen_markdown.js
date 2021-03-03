@@ -28,7 +28,7 @@ const gen_markdown = ( d ) => {
 
 | ![alt text]( https://icons.iconarchive.com/icons/social-media-icons/social-buntings/48/Dopplr-icon.png "info-icon") | Additional Info | 
 | ------------- |-------------:|
-| Credits  |  ${d.credits} | 
+| Credits  |    ${d.credits} | 
 | Contributing     |  ${d.cont} | 
 | Tests    |  ${d.tests} | 
 | License  | ${badges[d.license]} |
@@ -38,8 +38,8 @@ const gen_markdown = ( d ) => {
 | Email    |  ${d.email} | 
 | Repos | [github.com/${d.username}/${d.username} ](https://github.com/${
 		d.username
-	}/)
-| Profile | [ ${d.username}.github.io ](https:///${d.username}.github.io/)
+	}/) |
+| Profile | [ ${d.username}.github.io ](https:///${d.username}.github.io/) |
 
 `;};
 
