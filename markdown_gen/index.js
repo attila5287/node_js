@@ -28,19 +28,22 @@ async function init() {
 			tests: "none",
 			email: "atiturkoz@hotmail.com",
 			license: "", 
+			languages: [""], 
+			npm: [""], 
 		};
-		console.log("def :>> ", Object.keys(answers));
-		console.log('def :>> ', default_answers);
+		// console.log("def :>> ", Object.keys(answers));
+		// console.log('def :>> ', default_answers);
 
 		Object.keys( answers ).forEach( k => {
-			console.log('k :>> ', k);
+			// console.log('k :>> ', k);
 			if (answers[k] == '') {
 				answers[ k ] = default_answers[ k ];
 			}
 		} );
 		
-		const markdown = gen_markdown(answers);
-		console.log( 'object :>> ', gen_markdown( answers ) );
+		const markdown = gen_markdown( answers );
+		console.log('answers :>> ', answers);
+		// console.log( 'object :>> ', gen_markdown( answers ) );
 		const md = fs.writeFileSync("my_readme.md", markdown);
 	} catch (error) {}
 };

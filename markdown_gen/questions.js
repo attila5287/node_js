@@ -50,13 +50,19 @@ const questions = [
 		type: "list",
 		name: "license",
 		message: "License: ",
-    choices: [
-"mit",
-"boost",
-"apache",
-"mpl",
-"isc",
-      ],
+		choices: ["mit", "boost", "apache", "mpl", "isc"]
+	},
+	{
+		type: "checkbox",
+		name: "languages",
+		message: "Language: ",
+		choices: ["python", "js", "markdown", "html", "css", "jquery", "bootstrap"]
+	},
+	{
+		type: "checkbox",
+		name: "npm",
+		message: "NPM: ",
+		choices: ["inquirer", "fs", "util",]
 	}
 ];
 
