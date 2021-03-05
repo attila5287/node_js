@@ -1,7 +1,7 @@
 # ![alt text](https://raw.githubusercontent.com/attila5287/node_js/main/js.png  "node-js-png") Node JS Terminal Apps
 > *These are terminal **(CLI: Command Line Interface apps)** with no front end thus couldn't be deployed*
 
-| ![alt text](https://icons.iconarchive.com/icons/social-media-icons/social-buntings/48/Github-icon.png  "github-logo-png")  | Name/Folder| 
+| ![alt text](https://raw.githubusercontent.com/attila5287/node_js/main/gh.png "github-logo-png")  | Name/Folder| 
 | --- |:---| 
 **HTML Generator** | html_gen | github user stats as web page
 **PDF Generator** | pdf_generator | append a resume.pdf file 
@@ -19,7 +19,7 @@
 | **open**  | open file    | 
 | **TDD**  | test driven deployment   | 
 
-| ![alt text]( https://icons.iconarchive.com/icons/social-media-icons/social-buntings/48/Aim-icon.png "dev-icon") | About Developer | 
+| ![alt text]( https://raw.githubusercontent.com/attila5287/node_js/main/dev.jpg "dev-icon") | About Developer | 
 | -------------   | -------------: |
 | Repos | [github.com/attila5287 ](https://github.com/attila5287/) |
 | Profile | [ attila5287.github.io ](https:///attila5287.github.io/) |
