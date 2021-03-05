@@ -1,5 +1,6 @@
 ### ![alt text](https://raw.githubusercontent.com/attila5287/node_js/main/img/js.png  "node-js-png") Node JS Terminal Apps
-> *These are terminal **(CLI: Command Line Interface apps)** with no front end thus couldn't be deployed*
+> *These are terminal **(CLI: Command Line Interface)** apps with no front end thus couldn't be deployed*
+
 
 | ![alt text](https://raw.githubusercontent.com/attila5287/node_js/main/img/gh.png "github-logo-png")  | Name/Folder| 
 | --- |:---| 
