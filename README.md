@@ -1,4 +1,4 @@
-### Node JS Terminal Apps
+# ![alt text](https://raw.githubusercontent.com/attila5287/node_js/main/js.png  "node-js-png") Node JS Terminal Apps
 > *These are terminal **(CLI: Command Line Interface apps)** with no front end thus couldn't be deployed*
 
 | ![alt text](https://icons.iconarchive.com/icons/social-media-icons/social-buntings/48/Github-icon.png  "github-logo-png")  | Name/Folder| 
@@ -9,15 +9,15 @@
 **Team Portfolio Generator** | OOP_html_gen | object oriented programming
 **Word Guessing Game** | OOP_game | wheel of fortune in CLI
 
-| ![alt text](https://www.shareicon.net/data/64x64/2015/09/11/99371_javascript_512x512.png  "node-js-png") | Package/Func | 
+| ![alt text](https://raw.githubusercontent.com/attila5287/node_js/main/js.png  "node-js-png") | Package/Func | 
 | ------------- |:-------------|
-| inquirer  |  prompt user   | 
-| fs  |  write on/read from file   | 
-| chalk  | color terminal text    | 
-| axios  | get request/JSON response    | 
-| convertFactory  | HTML to PDF    | 
-| open  | open file    | 
-| TDD  | test driven deployment   | 
+| **inquirer**  |  prompt user   | 
+| **fs**  |  write on/read from file   | 
+| **chalk**  | color terminal text    | 
+| **axios**  | get request/JSON response    | 
+| **convertFactory**  | HTML to PDF    | 
+| **open**  | open file    | 
+| **TDD**  | test driven deployment   | 
 
 | ![alt text]( https://icons.iconarchive.com/icons/social-media-icons/social-buntings/48/Aim-icon.png "dev-icon") | About Developer | 
 | -------------   | -------------: |
