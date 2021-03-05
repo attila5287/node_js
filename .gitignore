@@ -135,3 +135,11 @@ dist
 02-Homework/pdf_gen/index.html
 02-Homework/pdf_gen/index.js
 02-Homework/pdf_gen/indx.js
+OOP_game/Main/index.js
+OOP_game/Main/package.json
+OOP_game/Main/lib/Game.js
+OOP_game/Main/lib/Letter.js
+OOP_game/Main/lib/Word.js
+OOP_game/Main/lib/words.js
+OOP_game/Main/test/Letter.test.js
+OOP_game/Main/test/Word.test.js
