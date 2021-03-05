@@ -6,16 +6,53 @@ const fs = require('fs');
 
 // console.log('questions :>> ', questions);
 
-async function init() {
-  let answers = {
-    team : await inquirer.prompt(questions.team),
-    manager : await inquirer.prompt( questions.manager ),
-    member :  await inquirer.prompt( questions.member ),
-    
+async function init () {
+  const team = {
+    manager:{},
+    members:[],
   };
-  console.log( 'answers :>> ', answers );
-  const html = generateHTML(answers)
-  console.log('generateHTML(answers) :>> ', html);
+  inquirer.prompt( questions.manager )
+    .then( ( answers ) => {
+      // console.log( 'answers :>> ', answers );
+      Object.keys( answers ).map( k => {
+        if (k !="add") {
+          team.manager[ k ] = answers[ k ];
+        }
+      } );
+      // console.log( 'team manager stored:>> ', team );
+      return answers.add;
+    } )
+    .then( ( add ) => {
+      // console.log( 'add :>> ', add );
+      if ( add ) {
+        
+        add_member( team );
+        
+      }else if ( !add ) {
+        console.log('team no members  :>> ', team );
+      }
+    } )
+    .catch( ( err ) => {
+    console.log('err :>> ', err);
+  });
+
 }
 
 init();
+function add_member ( team ) {
+  inquirer.prompt( questions.member ).then( ( answers ) => {
+    delete answers.add;
+    team.members.push( answers );
+    // console.log('team member added:>> ', team);
+    if ( answers.add ) {
+      console.log( '> > > member add' );
+      add_member(team);
+    } else {
+      console.log( '> > > team finish' );
+      console.log(team);
+      
+    }
+
+  } );
+}
+

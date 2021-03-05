@@ -18,7 +18,12 @@ const questions = {
 		{
 			message: "Enter team member's GitHub username",
 			name: "username"
-		}
+		},
+		{
+				message: "Add another member?",
+				type: "confirm",
+				name: "add",
+		},
 	],
 	manager: [
 			{
@@ -26,22 +31,23 @@ const questions = {
 				name: "name"
 			},
 			{
-        message: "Enter team manager's id",
+				message: "Enter team manager's id",
 				name: "id"
 			},
-    ],
+			{
+				message: "Add another member?",
+				type: "confirm",
+				name: "add",
+			},
+		],
+		add: [
+			{
+				message: "Add another member?",
+				type: "confirm",
+				name: "add",
+			},
+	]
     
-    team: [
-    {
-      message: "Enter team name",
-      name: "name"
-    },
-    {
-      message: "Enter head count of team, keep managers out",
-      name: "count"
-    },
-
-  ]
 }
   ;
   
