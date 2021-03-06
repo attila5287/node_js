@@ -1,4 +1,36 @@
-  # 10 Object-Oriented Programming: Team Profile Generator
+> **Employee**       
+>  ├ Manager                    
+>  ├ Engineer                   
+>  └ Intern                     
+
+### Sub Class: Manager
+|  | |  |
+| --- | --- | --- |
+| - |`officeNumber`| integer
+| + |`getRole()` | overridden to return `'Manager'`
+### Sub Class: Intern
+|  | |  |
+| --- | --- | --- |
+| --- | --- | --- |
+### Sub Class: Engineer
+|  | |  |
+| --- | --- | --- |
+| - |  `github` |  string
+| + |  `getGithub() `|returns GitHub username
+| + |  `getRole()` | overridden to return `'Engineer'`
+### Super Class: Employee
+|  | |  |
+| --- | --- | --- |
+|-| `name` | string |
+|-| `id` | integer |
+|-| `email` | string |
+|+| `getName()` | returns Name  ||
+|+| `getId()` | returns Id  ||
+|+| `getEmail()` | returns Email  ||
+|+| `getRole()` | returns Employee ||
+|---|---|---|
+
+# 10 Object-Oriented Programming: Team Profile Generator
 
 ## Your Task
 
