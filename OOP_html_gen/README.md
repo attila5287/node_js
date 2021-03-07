@@ -1,10 +1,3 @@
-|type|class|
-|---|---|
-super|*Employee*
-sub| Manager                    
-sub| Engineer                   
-sub| Intern                     
-***
 ### Super Class: Employee
 |  | |  |
 | --- | --- | --- |
