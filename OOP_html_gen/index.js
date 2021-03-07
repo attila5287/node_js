@@ -1,8 +1,9 @@
-const generateHTML = require('./src/generateHTML');
 const inquirer = require( 'inquirer' );
-const questions = require( './src/questions' );
 const fs = require('fs');
-
+const Engineer = require("./lib/Engineer");
+const Employee = require('./lib/Employee');
+const generateHTML = require( './src/generateHTML' );
+const questions = require( './src/questions' );
 
 // console.log('questions :>> ', questions);
 

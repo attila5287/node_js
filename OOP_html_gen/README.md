@@ -1,35 +1,41 @@
-> **Employee**       
->  ├ Manager                    
->  ├ Engineer                   
->  └ Intern                     
-
+|type|class|
+|---|---|
+super|*Employee*
+sub| Manager                    
+sub| Engineer                   
+sub| Intern                     
+***
+### Super Class: Employee
+|  | |  |
+| --- | --- | --- |
+| - | `name` | string |
+| - | `id` | integer |
+| - | `email` | string |
+| + | `getName()` | returns Name  ||
+| + | `getId()` | returns Id  ||
+| + | `getEmail()` | returns Email  ||
+| + | `getRole()` | returns Employee ||
+***
 ### Sub Class: Manager
 |  | |  |
 | --- | --- | --- |
 | - |`officeNumber`| integer
 | + |`getRole()` | overridden to return `'Manager'`
+***
 ### Sub Class: Intern
 |  | |  |
 | --- | --- | --- |
-| --- | --- | --- |
+| - | `school`| string |
+| + | `getSchool()`| returns school|
+| + | `getRole()`| overridden to return `'Intern'` |
+***
 ### Sub Class: Engineer
 |  | |  |
 | --- | --- | --- |
 | - |  `github` |  string
 | + |  `getGithub() `|returns GitHub username
 | + |  `getRole()` | overridden to return `'Engineer'`
-### Super Class: Employee
-|  | |  |
-| --- | --- | --- |
-|-| `name` | string |
-|-| `id` | integer |
-|-| `email` | string |
-|+| `getName()` | returns Name  ||
-|+| `getId()` | returns Id  ||
-|+| `getEmail()` | returns Email  ||
-|+| `getRole()` | returns Employee ||
-|---|---|---|
-
+***
 # 10 Object-Oriented Programming: Team Profile Generator
 
 ## Your Task
