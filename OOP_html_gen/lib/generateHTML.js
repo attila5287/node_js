@@ -18,6 +18,11 @@ function generateHTML ( d ) {
   <body>
     <h1>Team Profile  // 10 OOP</h1>
 `;
+	const styles = {
+		manager:'info',
+		engineer:'success',
+		intern:'warning',
+	};
 	const icons = {
 		manager:'fas fa-user-tie',
 		engineer:'fas fa-user-cog',
@@ -53,7 +58,7 @@ for ( let i = 0; i <d.members.length; i++ ) {
 	res =
 		res +
 		`<div class="card">
-  <div class="card-header"><h1 class='${icons[m.getRole().toLowerCase()]}'>${m.getRole()}</h1></div>
+  <div class="card-header bg-${styles[m.getRole().toLowerCase()]}"><h1 class='${icons[m.getRole().toLowerCase()]}'>${m.getRole()}</h1></div>
   <div class="card-body">`;
 	Object.keys( m ).forEach( k => {
 		res = res + `<p class="card-text bg-primary rounded">
