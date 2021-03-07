@@ -60,9 +60,9 @@ class Manager extends Employee {
 		return this.officeNumber;
 	}
 }
-const new_member = {
+const employees = {
 	Engineer: Engineer,
 	Intern: Intern,
 	Manager: Manager
 };
-module.exports = new_member;
+module.exports = employees;
