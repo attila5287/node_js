@@ -1,6 +1,8 @@
 const inquirer = require( 'inquirer' );
 const fs = require('fs');
+const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
+const Manager = require("./lib/Manager");
 const Employee = require('./lib/Employee');
 const generateHTML = require( './src/generateHTML' );
 const questions = require( './src/questions' );
@@ -12,48 +14,31 @@ async function init () {
     manager:{},
     members:[],
   };
-  inquirer.prompt( questions.manager )
-    .then( ( answers ) => {
-      // console.log( 'answers :>> ', answers );
-      Object.keys( answers ).map( k => {
-        if (k !="add") {
-          team.manager[ k ] = answers[ k ];
-        }
-      } );
-      // console.log( 'team manager stored:>> ', team );
-      return answers.add;
-    } )
-    .then( ( add ) => {
-      // console.log( 'add :>> ', add );
-      if ( add ) {
-        
-        add_member( team );
-        
-      }else if ( !add ) {
-        console.log('team no members  :>> ', team );
-      }
-    } )
-    .catch( ( err ) => {
-    console.log('err :>> ', err);
-  });
+  const team_mgr = await inquirer.prompt( questions.team_mgr );
+    
+  team.manager = {
+    team_mgr
+  }
+  const add = await inquirer.prompt( questions.add );
+  console.log( 'add :>> ', add );
+  
+  await add_team_mem( add, team );
+    
 
 }
 
 init();
-function add_member ( team ) {
-  inquirer.prompt( questions.member ).then( ( answers ) => {
-    delete answers.add;
-    team.members.push( answers );
-    // console.log('team member added:>> ', team);
-    if ( answers.add ) {
-      console.log( '> > > member add' );
-      add_member(team);
-    } else {
-      console.log( '> > > team finish' );
-      console.log(team);
-      
-    }
-
-  } );
+async function add_team_mem ( add, team ) {
+  if (add.add) {
+		const employee =  await inquirer.prompt(questions.role);
+		const role = await inquirer.prompt(questions.role);
+		const new_mem = await inquirer.prompt(questions[role.role.toLowerCase()]);
+		console.log("team_mem :>> ", new_mem);
+		team.members.push(new_mem);
+    console.log( 'team :>> ', team );
+    
+    const add_again = await inquirer.prompt( questions.add );
+    add_team_mem(add_again, team);
+  }
 }
 
