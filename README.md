@@ -8,13 +8,11 @@
 **PDF Generator** | pdf_generator | append a resume.pdf file 
 **Markdown Generator** | markdown_gen | creates click README.md
 **Team Portfolio Generator** | OOP_html_gen | object oriented programming
-**Word Guessing Game** | OOP_game | wheel of fortune in CLI
 
 | ![alt text](https://raw.githubusercontent.com/attila5287/node_js/main/img/js.png  "node-js-png") | Package/Func | 
 | ------------- |:-------------|
 | **inquirer**  |  prompt user   | 
 | **fs**  |  write on/read from file   | 
-| **chalk**  | color terminal text    | 
 | **axios**  | get request/JSON response    | 
 | **convertFactory**  | HTML to PDF    | 
 | **open**  | open file    | 
